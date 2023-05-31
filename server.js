@@ -4,11 +4,3 @@ const app = express();
 const port = 3000;
 
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
-
-
-console.log('HELLO WORLD!!!!!')
-console.log('this works')
-
-
-
-console.log('Team we have it')
