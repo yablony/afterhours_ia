@@ -1,24 +1,33 @@
 
 function renderCompliment() {
   document.querySelector('#page').innerHTML = `
-  <section class="display_compliment">
-  ${displayCompliments}
-  </section>
+    <div id="quoteContainer">
+      <p id="quote"></p>
+      <button id="newQuoteButton">New Quote</button>
+    </div>
   `
 }
 
-function displayCompliments() {
-  return state.quotes.map(compliment => `
-  <section class="compliment" data-id="${compliment.id}">
-  <header>
-  <h2>${compliment.compliment}</h2>
-  <span class="material-symbols-outlined delete" onClick="deleteCompliment(event)">delete</span>
-  </header>
-  
-  </section>
-  `)
+// Get references to HTML elements
+const quoteContainer = document.getElementById('quoteContainer');
+const quoteText = document.getElementById('quote');
+const newQuoteButton = document.getElementById('newQuoteButton');
 
+// Function to generate a random quote
+function generateRandomQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+  return randomQuote;
 }
+
+// Event listener for the "New Quote" button click
+newQuoteButton.addEventListener('click', () => {
+  const randomQuote = generateRandomQuote();
+  quoteText.textContent = randomQuote;
+});
+
+// Initial quote display
+quoteText.textContent = generateRandomQuote();
 
 
 const compliments = [
@@ -43,6 +52,5 @@ const compliments = [
   "Behind every great coder is an even greater amount of caffeine.",
   "Coffee and code: the perfect blend for productivity (and jitters).",
   "I'm not addicted to coffee, I'm just in a committed relationship.",
-  "Debugging without caffeine is like trying to find a needle in a haystack with oven mitts on.",
-
+  "Debugging without caffeine is like trying to find a needle in a haystack with oven mitts on."
   ];
