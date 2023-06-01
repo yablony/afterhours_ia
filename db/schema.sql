@@ -4,7 +4,8 @@ CREATE DATABASE afterhours_ia;
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
     username TEXT,
-    name TEXT,
+    first_name TEXT,
+    last_name TEXT,
     email TEXT,
     password_digest TEXT
 );
