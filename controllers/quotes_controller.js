@@ -5,7 +5,7 @@ const Quote = require('../models/quotes');
 
 router.get('/', (req, res) => {
     Quote
-        .finAll()
+        .findAll()
         .then(quotes => res.json(quotes))
 });
 
