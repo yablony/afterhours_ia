@@ -17,6 +17,6 @@ app.use(express.json()) // middleware to parse JSON body in a POST, PUT, or DELE
 app.use(sessions) 
 
 // this works like url prefix in flask // when we pass on two arguments, it's smart enough to understand that the first argument is a route and the second one is a middleware route function
-app.use('/api/quotes', quotesController) 
-app.use('/api/users', usersController)
-app.use('/api/sessions', sessionsContoller)
+// app.use('/api/quotes', quotesController) 
+// app.use('/api/users', usersController)
+// app.use('/api/sessions', sessionsContoller)
