@@ -5,8 +5,8 @@ const Quote = require('../models/quotes');
 
 router.get('/', (req, res) => {
     Quote
-        .findAll()
-        .then(quotes => res.json(quotes))
+        .findRandom()
+        .then(quote => res.json(quote));
 });
 
 module.exports = router;
