@@ -22,4 +22,6 @@ VALUES
     ('1', 'Kasun', 'Do not do your work on the main branch'),
     ('1', 'Bree', 'Have you tried asking your question with efficiency?'),
     ('1', 'Neil', 'Console log it!'),
-    ('1', 'Jordan', 'Wanna go to a breakout room?');
+    ('1', 'Jordan', 'Wanna go to a breakout room?')
+    ('1', 'Jordan', 'I am leaving now'),
+    ('1', 'Jordan', '... do not quote me on that');

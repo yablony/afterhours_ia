@@ -20,7 +20,8 @@ const compliments = [
   "Behind every great coder is an even greater amount of caffeine.",
   "Coffee and code: the perfect blend for productivity (and jitters).",
   "I'm not addicted to coffee, I'm just in a committed relationship.",
-  "Debugging without caffeine is like trying to find a needle in a haystack with oven mitts on."
+  "Debugging without caffeine is like trying to find a needle in a haystack with oven mitts on.",
+  
   ];
   
 function renderCompliment() {
