@@ -1,35 +1,3 @@
-
-function renderCompliment() {
-  document.querySelector('#page').innerHTML = `
-    <div id="complimentContainer">
-      <p id="compliment"></p>
-      <button id="newComplimentButton">New Compliment</button>
-    </div>
-  `
-}
-
-// Get references to HTML elements
-const complimentContainer = document.getElementById('complimentContainer');
-const complimentText = document.getElementById('compliment');
-const newComplimentButton = document.getElementById('newComplimentButton');
-
-// Function to generate a random Compliment
-function generateRandomCompliment() {
-  const randomIndex = Math.floor(Math.random() * compliments.length);
-  const randomCompliment = compliments[randomIndex];
-  return randomCompliment;
-}
-
-// Event listener for the "New Compliment" button click
-newComplimentButton.addEventListener('click', () => {
-  const randomCompliment = generateRandomCompliment();
-  complimentText.textcontent = randomCompliment;
-});
-
-// Initial Compliment display
-complimentText.textContent = generateRandomCompliment();
-
-
 const compliments = [
   "Your wit is so sharp, I'm surprised there aren't caution signs around you.",
   "High five = ^5",
@@ -54,3 +22,25 @@ const compliments = [
   "I'm not addicted to coffee, I'm just in a committed relationship.",
   "Debugging without caffeine is like trying to find a needle in a haystack with oven mitts on."
   ];
+  
+function renderCompliment() {
+  document.querySelector('#page').innerHTML = `
+    <div id="complimentContainer">
+      <p id="compliment" style="color: black"></p>
+      <button id="newComplimentButton" onClick="generateRandomCompliment(compliments)">New Compliment</button>
+    </div>
+  `
+}
+
+// Function to generate a random Compliment
+function generateRandomCompliment(arrayOfCompliments) {
+  const randomIndex = Math.floor(Math.random() * arrayOfCompliments.length);
+  const randomCompliment = arrayOfCompliments[randomIndex];
+  let complimentText = document.getElementById('compliment');
+  complimentText.textContent = randomCompliment;
+
+  return randomCompliment;
+}
+renderCompliment()
+
+
