@@ -22,5 +22,3 @@ VALUES
     ('1', 'Bree', 'Have you tried asking your question with efficiency?'),
     ('1', 'Neil', 'Console log it!'),
     ('1', 'Jordan', 'Wanna go to a breakout room?');
-
-
