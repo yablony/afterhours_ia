@@ -1,33 +1,33 @@
 
 function renderCompliment() {
   document.querySelector('#page').innerHTML = `
-    <div id="quoteContainer">
-      <p id="quote"></p>
-      <button id="newQuoteButton">New Quote</button>
+    <div id="complimentContainer">
+      <p id="compliment"></p>
+      <button id="newComplimentButton">New Compliment</button>
     </div>
   `
 }
 
 // Get references to HTML elements
-const quoteContainer = document.getElementById('quoteContainer');
-const quoteText = document.getElementById('quote');
-const newQuoteButton = document.getElementById('newQuoteButton');
+const complimentContainer = document.getElementById('complimentContainer');
+const complimentText = document.getElementById('compliment');
+const newComplimentButton = document.getElementById('newComplimentButton');
 
-// Function to generate a random quote
-function generateRandomQuote() {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  const randomQuote = quotes[randomIndex];
-  return randomQuote;
+// Function to generate a random Compliment
+function generateRandomCompliment() {
+  const randomIndex = Math.floor(Math.random() * compliments.length);
+  const randomCompliment = compliments[randomIndex];
+  return randomCompliment;
 }
 
-// Event listener for the "New Quote" button click
-newQuoteButton.addEventListener('click', () => {
-  const randomQuote = generateRandomQuote();
-  quoteText.textContent = randomQuote;
+// Event listener for the "New Compliment" button click
+newComplimentButton.addEventListener('click', () => {
+  const randomCompliment = generateRandomCompliment();
+  complimentText.textcontent = randomCompliment;
 });
 
-// Initial quote display
-quoteText.textContent = generateRandomQuote();
+// Initial Compliment display
+complimentText.textContent = generateRandomCompliment();
 
 
 const compliments = [
