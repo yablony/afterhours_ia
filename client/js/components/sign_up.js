@@ -44,5 +44,5 @@ function signUp(event) {
     })
         .then((res) => res.json())
         .then((email) => (state.loggedInUser = email))
-        .then(() => renderQuoteList());
+        .then(() => renderQuestionForm());
 }
