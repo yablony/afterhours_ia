@@ -7,11 +7,11 @@ function renderQuestionForm() {
       <fieldset>
         <label for="">Select your IA: </label>
         <select id="ia" name="ia">
-        <option value="neil">Anyone</option>
-          <option value="neil">Neil</option>
-          <option value="kasun">Kasun</option>
-          <option value="jordan">Jordan</option>
-          <option value="bree">Bree</option>
+          <option value="Anyone">Anyone</option>
+          <option value="Neil">Neil</option>
+          <option value="Kasun">Kasun</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Bree">Bree</option>
         </select>
       </fieldset>
       <fieldset>
@@ -31,6 +31,8 @@ function renderQuestionForm() {
 function findQuote(event) {
   event.preventDefault();
   const form = event.target;
+  const IaSelector = document.querySelector('ia');
+  
 
   const quotes = state.quotes.map(quoteObject => quoteObject.quote);
   const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
