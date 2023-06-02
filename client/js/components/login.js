@@ -32,7 +32,6 @@ function logIn(event) {
 
         .then(res => res.json())
         .then(res => {
-          console.log(res)
             if (res.error) {
                 renderLogin()
                 renderError(res.error)
