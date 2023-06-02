@@ -1,0 +1,45 @@
+// renders a form with a dropdown box to select an IA and an input field so users can provide a quote
+function renderMyQuotes() {
+  document.querySelector('#page').innerHTML = `
+  <section class="add-quote">
+    <form action="" onSubmit="addQuote(event)" class="new-quote-form">
+        <fieldset>
+        <select id="ia" name="ia">
+          <option value="Neil">Neil</option>
+          <option value="Kasun">Kasun</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Bree">Bree</option>
+        </select>
+        </fieldset>
+        <fieldset>
+            <label for="">Quote: </label>
+            <input type="text" name="quote">
+        </fieldset>
+        <button>Add Quote</button>
+    </form>
+</section>
+`
+}
+
+// issues with the fetch
+function addQuote(event) {
+  event.preventDefault()
+  const form = event.target
+
+  // converts form data into an object
+  const data = Object.fromEntries(new FormData(form))
+  console.log(data)
+
+  fetch('/api/quotes', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+    .then(res => res.json())
+    .then(quote => {
+      state.userQuote.push(quote)
+      renderMyQuotes()
+    })
+}
+
+
