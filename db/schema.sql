@@ -24,4 +24,5 @@ VALUES
     ('1', 'Neil', 'Console log it!'),
     ('1', 'Jordan', 'Wanna go to a breakout room?'),
     ('1', 'Jordan', 'I am leaving now'),
-    ('1', 'Jordan', '... do not quote me on that');
+    ('1', 'Jordan', '... do not quote me on that'),
+    ('1', 'Neil', 'Do not think, just type')
