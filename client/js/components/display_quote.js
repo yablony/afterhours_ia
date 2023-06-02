@@ -30,13 +30,22 @@ function renderQuestionForm() {
 // this functions displays the quote when the form is submittied
 function findQuote(event) {
   event.preventDefault();
-  const form = event.target;
-  const IaSelector = document.querySelector('ia');
+  const iaSelector = document.querySelector('#ia');
+  // creates an array with all of the names available inside the state that are pulled from the database (Anyone is not included)
+  const iaNames = state.quotes.map(quoteObject => quoteObject.name);
+
+  if (iaSelector.value === 'Anyone') {
+    const quotes = state.quotes.map(quoteObject => quoteObject.quote);
+    const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+    const quoteDOM = document.querySelector('#quote-answer');
+
+    quoteDOM.textContent = `Quote: ${quotes[randomQuoteIndex]}`;
+  } else {
+    const selectedIaObjects = state.quotes.filter(iaObject => iaObject.name === iaSelector.value)
+    const quotesOfAnIa = selectedIaObjects.map(quoteIaObject => quoteIaObject.quote);
+    const randomQuoteIndex = Math.floor(Math.random() * quotesOfAnIa.length);
+    const quoteDOM = document.querySelector('#quote-answer');
   
-
-  const quotes = state.quotes.map(quoteObject => quoteObject.quote);
-  const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
-
-  const quoteDOM = document.querySelector('#quote-answer');
-  quoteDOM.textContent = `Quote: ${quotes[randomQuoteIndex]}`;
+    quoteDOM.textContent = `Quote: ${quotesOfAnIa[randomQuoteIndex]}`;
+  }
 }
