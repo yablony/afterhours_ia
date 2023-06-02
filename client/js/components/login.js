@@ -32,7 +32,6 @@ function logIn(event) {
 
         .then(res => res.json())
         .then(res => {
-          console.log(res)
             if (res.error) {
                 renderLogin()
                 renderError(res.error)
@@ -49,3 +48,4 @@ function renderError(errorMessage) {
         `<h2 class="error">${errorMessage}</h2>` +
         document.querySelector('#page').innerHTML
 }
+
