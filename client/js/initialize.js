@@ -6,7 +6,7 @@ fetch('/api/quotes')
   .then(res => res.json())
   .then(quotes => {
     state.quotes = quotes
-    renderQuote()
+    renderDisplayQuote()
   })
 
 // fetch('/api/sessions')
