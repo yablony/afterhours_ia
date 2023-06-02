@@ -5,7 +5,7 @@ const Quote = require('../models/quotes');
 
 router.get('/', (req, res) => {
     Quote
-        .findRandom()
+        .findAll()
         .then(quote => res.json(quote));
 });
 
