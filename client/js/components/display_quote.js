@@ -1,5 +1,5 @@
 // this puts the ask question from the IA on the page
-function renderDisplayQuote() {
+function renderQuestionForm() {
   document.querySelector('#page').innerHTML = `
   <section class='create-quote'>
     <form action="" onSubmit="findQuote(event)">
@@ -32,5 +32,9 @@ function findQuote(event) {
   event.preventDefault();
   const form = event.target;
 
-  
+  const quotes = state.quotes.map(quoteObject => quoteObject.quote);
+  const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
+
+  const quoteDOM = document.querySelector('#quote-answer');
+  quoteDOM.textContent = `Quote: ${quotes[randomQuoteIndex]}`;
 }
