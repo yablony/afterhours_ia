@@ -23,7 +23,7 @@ function logIn(event) {
 
     // to convert the form ata into an object
     const data = Object.fromEntries(new FormData(form))
-
+    const welcomeDOM = document.querySelector('#welcome')
     fetch('/api/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -32,11 +32,13 @@ function logIn(event) {
 
         .then(res => res.json())
         .then(res => {
+          console.log(res)
             if (res.error) {
                 renderLogin()
                 renderError(res.error)
             } else {
                 state.loggedInUser = res.email
+                welcomeDOM.textContent = `Welcome ${state.loggedInUser}`
                 renderQuestionForm()
             }
         })
