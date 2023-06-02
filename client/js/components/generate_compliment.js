@@ -11,6 +11,7 @@ const compliments = [
   "There are only 10 types of people in the world: those who understand binary, and those who don't.",
   "Guide for asking with efficiency",
   "Please review",
+  "Don't think, just type",
 
   //caffeine related
   "Programmers are tools for converting caffeine into code.",
@@ -23,8 +24,12 @@ const compliments = [
   "Debugging without caffeine is like trying to find a needle in a haystack with oven mitts on.",
   
   ];
-  
+  // need to include the nav bar in the else statement as we only want users who aren't logged in.
 function renderCompliment() {
+// null is falsey by default, therefor the if {} else will run automatically
+  if (state.loggedInUser) {
+    console.log('kicked out')
+  }
   document.querySelector('#page').innerHTML = `
     <div id="complimentContainer">
       <p id="compliment" style="color: black"></p>

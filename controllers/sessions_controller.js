@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 
 const User = require('../models/user')
 
+
 router.post('/', (req, res) => {
   const { email, password } = req.body
 
@@ -37,16 +38,23 @@ router.get('/', (req, res) => {
   }
 })
 
-router.get('/sessions/delete', (req, res) => {
-  req.session.destroy((error) => {
-    if (error)
-    console.log('Error destroying the session')
-    else {
-      res.clearCookie('user_sid')
-      res.redirect('/')
-    }
+router.delete('/', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log('error');
+    } else {
+      res.clearCookie('user_sid');
+      res.json({
+        message: 'successful'
+      })
+      };
+    })
   })
-})
+  
+
+
+  
+
 
 
 module.exports = router
