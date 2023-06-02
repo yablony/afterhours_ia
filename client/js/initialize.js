@@ -27,10 +27,11 @@ function renderLogout(event) {
     .then(res => res.json())
     .then(res => {
         if(res.message === 'successful') {
+          let welcomeDOM = document.querySelector('#welcome')
+          welcomeDOM.textContent = 'Welcome'
           state.loggedInUser = null
           renderCompliment()
         }
-       
     })  
 }
 

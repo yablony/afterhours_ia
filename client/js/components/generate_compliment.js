@@ -9,9 +9,7 @@ const compliments = [
   "It's not a bug, it's an undocumented feature!",
   "I would love to change the world, but they won't give me the source code.",
   "There are only 10 types of people in the world: those who understand binary, and those who don't.",
-  "Guide for asking with efficiency",
   "Please review",
-  "Don't think, just type",
 
   //caffeine related
   "Programmers are tools for converting caffeine into code.",
