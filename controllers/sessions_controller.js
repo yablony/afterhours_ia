@@ -37,11 +37,12 @@ router.get('/', (req, res) => {
   }
 })
 
-router.get('/delete', (req, res) => {
-  req.sessionStore.destroy((error) => {
+router.get('/sessions/delete', (req, res) => {
+  req.session.destroy((error) => {
     if (error)
     console.log('Error destroying the session')
     else {
+      res.clearCookie('user_sid')
       res.redirect('/')
     }
   })

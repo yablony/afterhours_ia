@@ -49,3 +49,4 @@ function renderError(errorMessage) {
         `<h2 class="error">${errorMessage}</h2>` +
         document.querySelector('#page').innerHTML
 }
+

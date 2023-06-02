@@ -17,7 +17,7 @@ const port = 3000;
 // starting the web server
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
 
-app.set('view engine', 'ejs');
+
 app.use(logger) 
 app.use(express.static('client')) 
 app.use(express.json()) // middleware to parse JSON body in a POST, PUT, or DELETE request, and it assigns the data to req.body
