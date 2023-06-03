@@ -1,7 +1,7 @@
 // changes the html on the page
 function renderQuoteList() {
   document.querySelector('#page').innerHTML = `
-  <section class="add-quote">
+  <section class="quote-list">
     ${renderMyQuotes()}
   </section>
   `
@@ -61,7 +61,7 @@ function renderMyQuotes() {
   const userQuotes = state.quotes.filter(quote => quote.user_id == state.loggedInUserId)
   console.log(userQuotes)
   return userQuotes.map(quote => `
-   <section class=user-quotes" data-id='${quote.id}'>
+   <section class="quote" data-id='${quote.id}'>
      <header>
        <h2>${quote.name}</h2>
        <span class="material-symbols-outlined delete" onClick="deleteQuote(event)">delete</span>
@@ -69,4 +69,17 @@ function renderMyQuotes() {
       <p>${quote.quote}</p>
     </section>
     `).join('')
+}
+
+function deleteQuote(event) {
+  const deleteBtn = event.target
+  const quoteDOM = deleteBtn.closest('.quote')
+  const quoteId = quoteDOM.dataset.id
+  fetch(`/api/quotes/${quoteId}`, {
+    method: 'DELETE'
+  })
+    .then(() => {
+      state.quotes = state.quotes.filter(q => q.id != quoteId)
+      renderQuoteList()
+    })
 }

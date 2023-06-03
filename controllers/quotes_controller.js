@@ -34,5 +34,16 @@ router.post('/', (req, res) => {
                 .then(quote => res.json(quote))
         )
 })
+// ------------------------------------------------
+
+//to delete quotes
+
+router.delete('/:id', (req, res) => {
+    const quoteId = req.params.id
+
+    Quote
+        .delete(quoteId)
+        .then(() => res.json({ message: 'quote deleted' }))
+})
 
 module.exports = router;

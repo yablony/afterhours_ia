@@ -30,6 +30,12 @@ const Quote = {
         return db
             .query(sql, [user_id, name, quote])
             .then(dbRes => dbRes.rows[0])
+    },
+
+    delete: quoteId => {
+        const sql = 'DELETE FROM quotes WHERE id = $1'
+
+        return db.query(sql, [quoteId])
     }
 }
 

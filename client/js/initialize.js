@@ -14,9 +14,10 @@ fetch('/api/sessions')
   .then(data => {
     if (data.result === 'successful') {
       state.loggedInUser = data.email
+      state.loggedInUserId = data.userId
       let welcomeDOM = document.querySelector('#welcome')
       welcomeDOM.textContent = `Welcome ${state.loggedInUser}`
-    } 
+    }
   })
 
 function renderLogout(event) {
@@ -26,13 +27,13 @@ function renderLogout(event) {
   })
     .then(res => res.json())
     .then(res => {
-        if(res.message === 'successful') {
-          let welcomeDOM = document.querySelector('#welcome')
-          welcomeDOM.textContent = 'Welcome'
-          state.loggedInUser = null
-          renderCompliment()
-        }
-    })  
+      if (res.message === 'successful') {
+        let welcomeDOM = document.querySelector('#welcome')
+        welcomeDOM.textContent = 'Welcome'
+        state.loggedInUser = null
+        renderCompliment()
+      }
+    })
 }
 
 
