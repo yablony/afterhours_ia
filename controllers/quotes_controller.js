@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 //----------------------------------------------
 
 //to create quotes
-// not sure how to get the users Id here...
 router.post('/', (req, res) => {
     const userEmail = req.body.email
     const name = req.body.name
@@ -29,7 +28,7 @@ router.post('/', (req, res) => {
             const userId = user.id;
             return userId;
         })
-        .then(userId => 
+        .then(userId =>
             Quote
                 .create(userId, name, quote)
                 .then(quote => res.json(quote))

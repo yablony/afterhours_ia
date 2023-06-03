@@ -1,5 +1,5 @@
 // renders a form with a dropdown box to select an IA and an input field so users can provide a quote
-function renderMyQuotes() {
+function renderAddQuoteForm() {
   document.querySelector('#page').innerHTML = `
   <section class="add-quote">
     <form action="" onSubmit="addQuote(event)" class="new-quote-form">
@@ -22,7 +22,6 @@ function renderMyQuotes() {
 `
 }
 
-// issues with the fetch
 function addQuote(event) {
   event.preventDefault()
   const form = event.target
@@ -37,10 +36,26 @@ function addQuote(event) {
     body: JSON.stringify(data)
   })
     .then(res => res.json())
-    // .then(quote => {
-    //   state.userQuote.push(quote)
-    //   renderMyQuotes()
-    // })
+    .then(quote => {
+      console.log(`this is line 40 console log ${quote}`)
+      // prints as [object object]
+      state.userQuote.push(quote)
+      renderMyQuotes()
+    })
+}
+
+// renamed function on line 2 to more accurately portray what it does
+// the maybe function works, just need a nav button that runs it. Haven't tested fully
+function renderMyQuotes() {
+  return state.quotes.map(quote => `
+   <section class=user-quotes" data-id='${quote.id}'>
+     <header>
+       <h2>${quote.name}</h2>
+       <span class="material-symbols-outlined delete" onClick="deleteQuote(event)">delete</span>
+      </header>
+      <p>${quote.quote}</p>
+    </section>
+    `).join('')
 }
 
 
