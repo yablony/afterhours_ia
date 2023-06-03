@@ -29,7 +29,7 @@ const User = {
     create: (username, first_name, last_name, email, passwordDigest) => {
         const sql = `
         INSERT INTO users(username, first_name, last_name, email, password_digest)
-        VALUEs ($1, $2, $3, $4, $5)
+        VALUES ($1, $2, $3, $4, $5)
         RETURNING *
         `
         // Have it set to return all, could modify to return less later if we don't use the information anywhere

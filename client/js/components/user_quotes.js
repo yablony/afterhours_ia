@@ -3,21 +3,22 @@ function renderMyQuotes() {
   document.querySelector('#page').innerHTML = `
   <section class="add-quote">
     <form action="" onSubmit="addQuote(event)" class="new-quote-form">
-        <fieldset>
-        <select id="ia" name="ia">
+      <input type="hidden" name="email" value=${state.loggedInUser}>
+      <fieldset>
+        <select id="ia" name="name">
           <option value="Neil">Neil</option>
           <option value="Kasun">Kasun</option>
           <option value="Jordan">Jordan</option>
           <option value="Bree">Bree</option>
         </select>
-        </fieldset>
-        <fieldset>
-            <label for="">Quote: </label>
-            <input type="text" name="quote">
-        </fieldset>
-        <button>Add Quote</button>
+      </fieldset>
+      <fieldset>
+        <label for="">Quote: </label>
+        <input type="text" name="quote">
+      </fieldset>
+      <button>Add Quote</button>
     </form>
-</section>
+  </section>
 `
 }
 
@@ -36,10 +37,10 @@ function addQuote(event) {
     body: JSON.stringify(data)
   })
     .then(res => res.json())
-    .then(quote => {
-      state.userQuote.push(quote)
-      renderMyQuotes()
-    })
+    // .then(quote => {
+    //   state.userQuote.push(quote)
+    //   renderMyQuotes()
+    // })
 }
 
 
