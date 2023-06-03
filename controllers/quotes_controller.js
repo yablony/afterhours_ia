@@ -3,8 +3,7 @@ const router = express.Router();
 
 //models
 const Quote = require('../models/quotes');
-const { route } = require('./quotes_controller');
-
+const User = require('../models/user');
 
 //routes
 
@@ -19,15 +18,22 @@ router.get('/', (req, res) => {
 
 //to create quotes
 // not sure how to get the users Id here...
-router.post('/api/quotes', (req, res) => {
-    console.log('mooo')
-    const userId = howGetIdHere
+router.post('/', (req, res) => {
+    const userEmail = req.body.email
     const name = req.body.name
     const quote = req.body.quote
 
-    Quote
-        .create(userId, name, quote)
-        .then(quote => res.json(quote))
+    User
+        .findByEmail(userEmail)
+        .then(user => {
+            const userId = user.id;
+            return userId;
+        })
+        .then(userId => 
+            Quote
+                .create(userId, name, quote)
+                .then(quote => res.json(quote))
+        )
 })
 
 module.exports = router;
