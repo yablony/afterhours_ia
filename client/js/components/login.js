@@ -37,6 +37,7 @@ function logIn(event) {
                 renderError(res.error)
             } else {
                 state.loggedInUser = res.email
+                state.loggedInUserId = res.userId
                 welcomeDOM.textContent = `Welcome ${state.loggedInUser}`
                 renderQuestionForm()
             }
