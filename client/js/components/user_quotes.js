@@ -1,3 +1,12 @@
+// changes the html on the page
+function renderQuoteList() {
+  document.querySelector('#page').innerHTML = `
+  <section class="add-quote">
+    ${renderMyQuotes()}
+  </section>
+  `
+}
+
 // renders a form with a dropdown box to select an IA and an input field so users can provide a quote
 function renderAddQuoteForm() {
   document.querySelector('#page').innerHTML = `
@@ -44,10 +53,14 @@ function addQuote(event) {
     })
 }
 
-// renamed function on line 2 to more accurately portray what it does
+
 // the maybe function works, just need a nav button that runs it. Haven't tested fully
 function renderMyQuotes() {
-  return state.quotes.map(quote => `
+  // need a function to filter through the id's of the users
+  // we need to find the id using email
+  const userQuotes = state.quotes.filter(quote => quote.user_id == state.loggedInUserId)
+  console.log(userQuotes)
+  return userQuotes.map(quote => `
    <section class=user-quotes" data-id='${quote.id}'>
      <header>
        <h2>${quote.name}</h2>
@@ -57,5 +70,3 @@ function renderMyQuotes() {
     </section>
     `).join('')
 }
-
-

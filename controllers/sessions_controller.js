@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
         if (user && isValidPassword) {
           // log the user in
           req.session.userId = user.id
-          res.json({ email: user.email })
+          res.json({ email: user.email, userId: user.id})
         }
       }
     })
@@ -30,9 +30,10 @@ router.get('/', (req, res) => {
   const userId = req.session.userId
   // if logged in:
   if (userId) {
+    console.log("UserId ", userId)
     User
       .findById(userId)
-      .then(email => res.json({ result: 'successful', email: email }))
+      .then(email => res.json({ result: 'successful', email: email, userId: userId }))
   } else {
     res.json({})
   }
