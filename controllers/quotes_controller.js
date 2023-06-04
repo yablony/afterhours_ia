@@ -34,13 +34,31 @@ router.post('/', (req, res) => {
 // ------------------------------------------------
 
 //to delete quotes
-
 router.delete('/:id', (req, res) => {
     const quoteId = req.params.id
 
     Quote
         .delete(quoteId)
         .then(() => res.json({ message: 'quote deleted' }))
+})
+// ------------------------------------------------
+
+// to update quotes
+router.put('/', (req, res) => {
+    const userEmail = req.body.email
+    const name = req.body.name
+    const quote = req.body.quote
+    const id = req.body.id
+    console.log("REQ.BODY: ", req.body)
+
+    User
+        .findByEmail(userEmail)
+        .then(user => user.id)
+        .then(userId =>
+            Quote
+                .update(userId, name, quote, id)
+                .then(quote => res.json(quote))
+        )
 })
 
 module.exports = router;

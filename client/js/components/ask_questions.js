@@ -1,6 +1,6 @@
 // this puts the ask question from the IA on the page
 function renderQuestionForm() {
-  document.querySelector('#page').innerHTML = `
+document.querySelector('#page').innerHTML = `
   <section class='create-quote'>
     <form action="" onSubmit="findQuote(event)">
       <h2>Ask your question!</h2>
