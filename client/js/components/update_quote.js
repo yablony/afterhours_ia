@@ -1,28 +1,28 @@
-// renders a form with a dropdown box to select an IA and an input field so users can provide a quote
-function renderAddQuoteForm() {
+function renderUpdateQuote(event) {
+    const updateBtn = event.target
+    const quoteDOM = updateBtn.closest('.quote')
+    const quoteId = quoteDOM.dataset.id
+    const quoteArray = state.quotes.filter(quote => quote.id == quoteId)
+    const quoteText = quoteArray[0].quote
+    const name = quoteArray[0].name
+
     document.querySelector('#page').innerHTML = `
-    <section class="add-quote">
-      <form action="" onSubmit="addQuote(event)" class="new-quote-form">
+    <section class="update-quote">
+      <form action="" onSubmit="updateQuote(event)" class="update-quote-form">
         <input type="hidden" name="email" value=${state.loggedInUser}>
+        <h2>${name} once said: </h2>
         <fieldset>
-          <select id="ia" name="name">
-            <option value="Neil">Neil</option>
-            <option value="Kasun">Kasun</option>
-            <option value="Jordan">Jordan</option>
-            <option value="Bree">Bree</option>
-          </select>
+          <input type="text" name="quote" value="${quoteText}">
         </fieldset>
-        <fieldset>
-          <label for="">Quote: </label>
-          <input type="text" name="quote">
-        </fieldset>
-        <button>Add Quote</button>
+        <button>Update Quote</button>
       </form>
     </section>
   `
 }
 
-function addQuote(event) {
+// need to change method to PUT
+// provide name
+function updateQuote(event) {
     event.preventDefault()
     const form = event.target
 

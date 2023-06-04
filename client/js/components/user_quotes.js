@@ -18,6 +18,7 @@ function renderMyQuotes() {
    <section class="quote" data-id='${quote.id}'>
      <header>
        <h2>${quote.name}</h2>
+       <span class="material-symbols-outlined update" onClick="renderUpdateQuote(event)">update</span>
        <span class="material-symbols-outlined delete" onClick="deleteQuote(event)">delete</span>
       </header>
       <p>${quote.quote}</p>

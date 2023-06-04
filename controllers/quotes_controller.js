@@ -24,10 +24,7 @@ router.post('/', (req, res) => {
 
     User
         .findByEmail(userEmail)
-        .then(user => {
-            const userId = user.id;
-            return userId;
-        })
+        .then(user => user.id)
         .then(userId =>
             Quote
                 .create(userId, name, quote)
