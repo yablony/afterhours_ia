@@ -13,7 +13,6 @@ function renderMyQuotes() {
   // need a function to filter through the id's of the users
   // we need to find the id using email
   const userQuotes = state.quotes.filter(quote => quote.user_id == state.loggedInUserId)
-  console.log(userQuotes)
   return userQuotes.map(quote => `
    <section class="quote" data-id='${quote.id}'>
      <header>

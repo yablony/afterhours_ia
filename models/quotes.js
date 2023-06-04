@@ -36,6 +36,19 @@ const Quote = {
         const sql = 'DELETE FROM quotes WHERE id = $1'
 
         return db.query(sql, [quoteId])
+    },
+
+    update: (user_id, name, quote, id) => {
+        const sql = `
+        UPDATE quotes 
+        SET user_id = $1, name = $2, quote = $3 
+        WHERE id = $4
+        RETURNING *
+        `
+
+        return db
+            .query(sql, [user_id, name, quote, id])
+            .then(dbRes => dbRes.rows[0])
     }
 }
 
