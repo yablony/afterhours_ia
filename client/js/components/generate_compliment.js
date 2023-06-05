@@ -29,7 +29,7 @@ function renderCompliment() {
       <button id="newComplimentButton" onClick="generateRandomCompliment(compliments)">New Compliment</button>
     </div>
   `
-};
+}
 
 // Function to generate a random Compliment
 function generateRandomCompliment(arrayOfCompliments) {
@@ -38,7 +38,7 @@ function generateRandomCompliment(arrayOfCompliments) {
   let complimentText = document.getElementById('compliment');
   complimentText.textContent = randomCompliment;
   return randomCompliment;
-};
+}
 
 renderCompliment();
 
@@ -68,6 +68,6 @@ function showTime() {
 
   document.getElementById("clock")
     .innerHTML = currentTime;
-};
+}
 
 showTime();

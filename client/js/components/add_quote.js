@@ -20,7 +20,7 @@ function renderAddQuoteForm() {
       </form>
     </section>
   `
-};
+}
 
 function addQuote(event) {
   event.preventDefault()
@@ -39,4 +39,4 @@ function addQuote(event) {
       state.quotes.push(quote)
       renderQuoteList()
     })
-};
+}
