@@ -20,7 +20,7 @@ fetch('/api/quotes')
   .then(res => res.json())
   .then(quotes => {
     state.quotes = quotes
-    // renderCompliment()
+    renderCompliment()
     renderNavBar()
 });
 
@@ -59,3 +59,6 @@ function renderNavBar() {
 };
 
 
+while (state.loggedInUser) {
+  renderNavBar();
+}
