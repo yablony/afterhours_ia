@@ -84,5 +84,9 @@ function findQuote(event) {
     const quoteDOM = document.querySelector('#quote-answer');
 
     quoteDOM.textContent = `Quote: ${quotesOfAnIa[randomQuoteIndex]}`;
+    if (iaSelector.value === 'Kasun') {
+      console.log('meow')
+      document.body.classList.add('kasun');
+    }
   }
 }

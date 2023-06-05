@@ -1,12 +1,15 @@
 * {
   box-sizing: border-box;
   /* border: 1px solid black; */
+  background-image: url("../../resources/user_stories.png");
 }
 
 body {
   font-family: 'Quicksand', sans-serif;
   margin: 0 2rem;
   background-color: #cad2c5;
+  background-image: url("../../resources/user_stories.png");
+  background-repeat: repeat;
   color: #2f3e46;
   display: flex;
   flex-direction: column;
@@ -33,4 +36,8 @@ body {
 
 h1 {
   margin-top: 20px;
+}
+
+.kasun {
+  background-image: url(../../resources/NewProject.png);
 }
