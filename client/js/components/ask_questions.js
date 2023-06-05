@@ -25,7 +25,7 @@ function renderQuestionForm() {
     </form>
   </section>
   `;
-};
+}
 
 // this functions displays the quote when the form is submittied
 function findQuote(event) {
@@ -48,4 +48,4 @@ function findQuote(event) {
 
     quoteDOM.textContent = `Quote: ${quotesOfAnIa[randomQuoteIndex]}`;
   }
-};
+}
