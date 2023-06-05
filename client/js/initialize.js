@@ -18,7 +18,7 @@ fetch('/api/quotes')
   .then(res => res.json())
   .then(quotes => {
     state.quotes = quotes
-    renderQuestionForm()
+    renderCompliment()
     renderNavBar()
 })
 
