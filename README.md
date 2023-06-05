@@ -33,11 +33,18 @@ Our first group project! Julia, Dale, Ben built a helper tool for students - get
 
 ## :scream: Bugs to fix :poop:
 - When a user doesn't write anything inside the question field on the 'Ask IA' page they can still generate a quote from them.
-- 
+- The state variable can be used to access users' accounts without needing to log in: by chnaging the variable's keys through the console on the webpage.
+- App is not adjusted for screens of different sizes, e.g. the mobile interface.
 
 ## :sob: Lessons learnt
 - Frequent and succinct git commits assist in telling a clear story. 
-- Avoiding convoluted and repetitive code especially when working as a part of a team 
+- Avoiding convoluted and repetitive code especially when working as a part of a team.
+- Making notes on each part of the code even if everyone thinks they know what it does. The goal is to make sure we all have the same understanding.
+- Always create a new repo branch when working on a new feature or fixing a bug.
+- Always delete the branch once the feature is finished to avoid having different branches and getting confused in them.
+- When debugging change very small parts of the code, even if it's one line, then console.log it to see if it's changed anything.
 
 ## :white_check_mark: Future features
-- As a general user I can favourite a quote to view a list of quotes that I liked.
+- A general user can favourite a quote from an IA to view a list of quotes that they liked.
+- A general user can report a quote that they find offensive.
+- A general user can ask a question to anyone and then 
