@@ -1,3 +1,5 @@
+// const { name } = require("ejs");
+
 // this puts the ask question from the IA on the page
 function renderQuestionForm() {
   document.querySelector('#page').innerHTML = `
@@ -29,8 +31,17 @@ function renderQuestionForm() {
 
 function findIA(event) {
   event.preventDefault();
-  console.log("meow")
-  document.query
+
+  const nameSelection = document.querySelector('#ia-guess');
+  const quoteAnswer = document.querySelector('#quote-answer').textContent.slice(7);
+  const quoteAnswerObject = state.quotes.filter(quoteObject => quoteObject.quote === quoteAnswer);
+  const guessResult = document.querySelector('#guess-result');
+
+  if (nameSelection.value === quoteAnswerObject[0].name) {
+    guessResult.textContent = "Legend, you guessed correctly! - Neil approves";
+  } else {
+    guessResult.textContent = "That's wrong! You should know your IAs better...";
+  }
 }
 
 // this functions displays the quote when the form is submittied
@@ -43,18 +54,20 @@ function findQuote(event) {
     const guessFormSection = document.createElement('section');
     guessFormSection.innerHTML = `
     <form id="guess-ia" action="" onSubmit="findIA(event)">
-    <fieldset>
-      <label for="">Guess who said this: </label>
-      <select id="ia" name="ia">
-        <option value="Neil">Neil</option>
-        <option value="Kasun">Kasun</option>
-        <option value="Jordan">Jordan</option>
-        <option value="Bree">Bree</option>
-      </select>
-    </fieldset>
-    <button>Submit Guess</button>
+      <fieldset>
+        <label for="">Guess who said this: </label>
+        <select id="ia-guess" name="ia-guess">
+          <option value="Neil">Neil</option>
+          <option value="Kasun">Kasun</option>
+          <option value="Jordan">Jordan</option>
+          <option value="Bree">Bree</option>
+        </select>
+      </fieldset>
+      <button>Submit Guess</button>
     </form>
+    <p id="guess-result"></p>
     `
+    
     askIADOM.appendChild(guessFormSection);
 
     const quotes = state.quotes.map(quoteObject => quoteObject.quote);
