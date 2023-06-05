@@ -32,7 +32,7 @@ The GitHub repositary was set up to allow us to code and work as a group on the 
 Finally, the app was deployed on Render and any deployment related errors were fixed. 
 
 ## :rocket: Cool tech
-- Coding languages: HTML, CSS, JavaScript.
+- Coding languages: HTML, CSS, JavaScript, SQL.
 - Web framework: Express.
 - Database related tech: Postgresql, CRUD, RESTful routes.
 - Code editor: Visual Studio Code.
@@ -43,7 +43,7 @@ Finally, the app was deployed on Render and any deployment related errors were f
 
 ## :scream: Bugs to fix :poop:
 - When a user doesn't write anything inside the question field on the 'Ask IA' page they can still generate a quote from them.
-- The state variable can be used to access users' accounts without needing to log in: by chnaging the variable's keys through the console on the webpage.
+- The state variable can be used to access users' accounts without needing to log in: by changing the variable's keys through the console on the webpage.
 - App is not adjusted for screens of different sizes, e.g. the mobile interface.
 
 ## :sob: Lessons learnt

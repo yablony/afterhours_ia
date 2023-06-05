@@ -1,7 +1,7 @@
 // this puts the ask question from the IA on the page
 function renderQuestionForm() {
   document.querySelector('#page').innerHTML = `
-  <section class='create-quote'>
+  <section class='ask-question'>
     <form action="" onSubmit="findQuote(event)">
       <h2>Ask your question!</h2>
       <fieldset>
@@ -27,14 +27,36 @@ function renderQuestionForm() {
   `;
 }
 
+function findIA(event) {
+  event.preventDefault();
+  console.log("meow")
+  document.query
+}
+
 // this functions displays the quote when the form is submittied
 function findQuote(event) {
   event.preventDefault();
   const iaSelector = document.querySelector('#ia');
-  // creates an array with all of the names available inside the state that are pulled from the database (Anyone is not included)
-  const iaNames = state.quotes.map(quoteObject => quoteObject.name);
 
   if (iaSelector.value === 'Anyone') {
+    const askIADOM = document.querySelector('.ask-question');
+    const guessFormSection = document.createElement('section');
+    guessFormSection.innerHTML = `
+    <form id="guess-ia" action="" onSubmit="findIA(event)">
+    <fieldset>
+      <label for="">Guess who said this: </label>
+      <select id="ia" name="ia">
+        <option value="Neil">Neil</option>
+        <option value="Kasun">Kasun</option>
+        <option value="Jordan">Jordan</option>
+        <option value="Bree">Bree</option>
+      </select>
+    </fieldset>
+    <button>Submit Guess</button>
+    </form>
+    `
+    askIADOM.appendChild(guessFormSection);
+
     const quotes = state.quotes.map(quoteObject => quoteObject.quote);
     const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
     const quoteDOM = document.querySelector('#quote-answer');

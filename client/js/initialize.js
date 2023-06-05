@@ -3,6 +3,7 @@ const state = {
   loggedInUser: null,
   loggedInUserId: null
 };
+
 // in order to log out also need to destory cookie/loggedInUser
 fetch('/api/sessions')
   .then(res => res.json())
@@ -13,7 +14,7 @@ fetch('/api/sessions')
       let welcomeDOM = document.querySelector('#welcome')
       welcomeDOM.textContent = `Welcome ${state.loggedInUser}`
     }
-  });
+});
 
 fetch('/api/quotes')
   .then(res => res.json())
@@ -21,7 +22,7 @@ fetch('/api/quotes')
     state.quotes = quotes
     renderCompliment()
     renderNavBar()
-  });
+});
 
 function renderLogout(event) {
   event.preventDefault()
