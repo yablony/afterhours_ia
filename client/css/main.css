@@ -106,6 +106,7 @@ h1 {
 
 .log-in form fieldset,
 .sign-up form fieldset {
+  border: none;
   margin-bottom: 10px;
 }
 
@@ -122,6 +123,9 @@ h1 {
 
 .log-in form button,
 .sign-up form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 5px 10px;
   background-color: #84a98c;
   color: #fff;
