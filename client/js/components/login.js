@@ -43,6 +43,7 @@ function logIn(event) {
                 welcomeDOM.textContent = `Welcome ${state.loggedInUser}`
                 renderQuestionForm()
                 renderNavBar()
+                console.log(console.log("nav bar - login.js - line 45"))
             }
         })
 };

@@ -20,8 +20,9 @@ fetch('/api/quotes')
   .then(res => res.json())
   .then(quotes => {
     state.quotes = quotes
-    // renderCompliment()
+    renderCompliment()
     renderNavBar()
+    console.log("nav bar - initialise.js - line 25")
 });
 
 function renderLogout(event) {
@@ -37,9 +38,10 @@ function renderLogout(event) {
         state.loggedInUser = null
         renderCompliment()
         renderNavBar()
+        console.log("nav bar - initialise.js - line 41")
       }
     })
-};
+}
 
 function renderNavBar() {
   if (state.loggedInUser === null) {
@@ -59,3 +61,6 @@ function renderNavBar() {
 };
 
 
+while (state.loggedInUser) {
+  renderNavBar();
+}
