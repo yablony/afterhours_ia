@@ -1,16 +1,26 @@
 const pg = require("pg");
 
+const localDbName = 'afterhours_ia'
+
 let db;
-if (process.env.DATABASE_SECRET_PASSWORD) {
-    db = new pg.Pool({
-        database: "afterhours_ia",
-        password: process.env.DATABASE_SECRET_PASSWORD,
-    });
+if (process.env.DATABASE_URL) {
+  db = new pg.Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  })
 } else {
-    // for mac
+  if (process.env.DEV_DB_PASSWORD) {
     db = new pg.Pool({
-        database: "afterhours_ia",
-    });
+      database: localDbName,
+      password: process.env.DEV_DB_PASSWORD
+    })
+  } else {
+    db = new pg.Pool({
+      database: localDbName
+    })
+  }
 }
 
 module.exports = db;

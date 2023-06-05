@@ -12,7 +12,7 @@ const sessionsContoller = require('./controllers/sessions_controller')
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // starting the web server
 app.listen(port, () => console.log(`listening on http://localhost:${port}`));
