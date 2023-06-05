@@ -2,7 +2,7 @@
 function renderLogin() {
     document.querySelector('#page').innerHTML = `
     <section class='log-in'>
-        <form action ="" onSubmit="logIn(event)">
+        <form action ="" onSubmit="logIn(event)" id="log-in">
            <h2>Log In</h2>
            <fieldset>
              <label for="">Email: </label>
