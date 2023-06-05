@@ -1,9 +1,11 @@
 * {
   box-sizing: border-box;
+  /* border: 1px solid black; */
 }
 
 body {
-  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0 2rem;
   background-color: #cad2c5;
   color: #2f3e46;
   display: flex;
@@ -11,6 +13,12 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
+}
+
+#welcome {
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
 }
 
 #clock {
@@ -22,130 +30,7 @@ body {
   padding: 10px;
   border-radius: 25px;
 }
-#complimentContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  grid-column: 1 / -1;
-}
-
-#newComplimentButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-}
 
 h1 {
   margin-top: 20px;
 }
-
-#navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  list-style: none;
-  width: 300px;
-  margin-left: auto;
-  padding: 10px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  border: 1px solid #2f3e46;
-  border-radius: 15px;
-}
-
-#navbar li {
-  margin-bottom: 10px;
-}
-
-#navbar li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 5px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-#navbar li a:hover {
-  background-color: #415a77;
-}
-
-.center-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  margin-top: 20px;
-}
-
-.center-content p {
-  margin-top: 20px;
-}
-
-.log-in,
-.sign-up {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.log-in form,
-.sign-up form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 300px;
-  padding: 10px;
-  border: 1px solid #2f3e46;
-  border-radius: 15px;
-}
-
-.log-in form h2,
-.sign-up form h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.log-in form fieldset,
-.sign-up form fieldset {
-  border: none;
-  margin-bottom: 10px;
-}
-
-.log-in form label,
-.sign-up form label {
-  margin-bottom: 5px;
-}
-
-.log-in form input,
-.sign-up form input {
-  padding: 5px;
-  width: 100%;
-}
-
-.log-in form button,
-.sign-up form button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px 10px;
-  background-color: #84a98c;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.log-in form button:hover,
-.sign-up form button:hover {
-  background-color: #52796f;
-}
-
- /* {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-} */

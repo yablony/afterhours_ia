@@ -1,0 +1,59 @@
+.log-in,
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.log-in form,
+.sign-up form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #2f3e46;
+  border-radius: 15px;
+}
+
+.log-in form h2,
+.sign-up form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.log-in form fieldset,
+.sign-up form fieldset {
+  border: none;
+  margin-bottom: 10px;
+}
+
+.log-in form label,
+.sign-up form label {
+  margin-bottom: 5px;
+}
+
+.log-in form input,
+.sign-up form input {
+  padding: 5px;
+  width: 100%;
+}
+
+.log-in form button,
+.sign-up form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #84a98c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.log-in form button:hover,
+.sign-up form button:hover {
+  background-color: #52796f;
+}

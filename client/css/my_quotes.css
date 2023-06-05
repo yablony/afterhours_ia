@@ -1,0 +1,14 @@
+.quote-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.quote {
+    border: 1px solid #52796F;
+    padding: 0 1rem;
+    box-shadow: 3px 3px 3px #52796F;
+    border-radius: 25% 10%;
+    display: flex;
+    flex-direction: column;
+}
