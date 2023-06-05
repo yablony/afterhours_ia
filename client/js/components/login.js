@@ -12,7 +12,7 @@ function renderLogin() {
              <label for="">Password: </label>
              <input type="password" name="password">
             </fieldset>
-            <button>Log In</button>
+            <button class="btn btn-success">Log In</button>
         </form>
     </section>
     `

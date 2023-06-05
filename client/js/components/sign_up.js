@@ -24,7 +24,7 @@ function renderSignUp() {
                 <label for="">Password: </label>
                 <input type="password" name="password">
             </fieldset>
-            <button>Sign Up</button>
+            <button class="btn btn-success">Sign Up</button>
         </form>
    </section>
    `;

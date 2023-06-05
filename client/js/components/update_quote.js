@@ -16,7 +16,7 @@ function renderUpdateQuote(event) {
         <fieldset>
           <input type="text" name="quote" value="${quoteText}">
         </fieldset>
-        <button>Update Quote</button>
+        <button class="btn btn-success">Update Quote</button>
       </form>
     </section>
   `
