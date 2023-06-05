@@ -52,23 +52,25 @@ function findQuote(event) {
   if (iaSelector.value === 'Anyone') {
     const askIADOM = document.querySelector('.ask-question');
     const guessFormSection = document.createElement('section');
-    guessFormSection.innerHTML = `
-    <form id="guess-ia" action="" onSubmit="findIA(event)">
-      <fieldset>
-        <label for="">Guess who said this: </label>
-        <select id="ia-guess" name="ia-guess">
-          <option value="Neil">Neil</option>
-          <option value="Kasun">Kasun</option>
-          <option value="Jordan">Jordan</option>
-          <option value="Bree">Bree</option>
-        </select>
-      </fieldset>
-      <button class="btn btn-success">Submit Guess</button>
-    </form>
-    <p id="guess-result"></p>
-    `
-    
-    askIADOM.appendChild(guessFormSection);
+
+    if (!document.querySelector('#guess-ia')) {
+      guessFormSection.innerHTML = `
+      <form id="guess-ia" action="" onSubmit="findIA(event)">
+        <fieldset>
+          <label for="">Guess who said this: </label>
+          <select id="ia-guess" name="ia-guess">
+            <option value="Neil">Neil</option>
+            <option value="Kasun">Kasun</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Bree">Bree</option>
+          </select>
+        </fieldset>
+        <button class="btn btn-success">Submit Guess</button>
+      </form>
+      <p id="guess-result"></p>
+      `
+      askIADOM.appendChild(guessFormSection);
+    }
 
     const quotes = state.quotes.map(quoteObject => quoteObject.quote);
     const randomQuoteIndex = Math.floor(Math.random() * quotes.length);
