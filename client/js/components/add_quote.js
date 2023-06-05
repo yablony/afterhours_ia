@@ -16,7 +16,7 @@ function renderAddQuoteForm() {
           <label for="">Quote: </label>
           <input type="text" name="quote">
         </fieldset>
-        <button>Add Quote</button>
+        <button class="btn btn-success">Add Quote</button>
       </form>
     </section>
   `

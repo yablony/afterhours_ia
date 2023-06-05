@@ -26,7 +26,7 @@ function renderCompliment() {
   document.querySelector('#page').innerHTML = `
     <div id="complimentContainer">
       <p id="compliment" style="color: black"></p>
-      <button id="newComplimentButton" onClick="generateRandomCompliment(compliments)">New Compliment</button>
+      <button id="newComplimentButton" onClick="generateRandomCompliment(compliments)" class="btn btn-success">New Compliment</button>
     </div>
   `
 }
@@ -40,7 +40,7 @@ function generateRandomCompliment(arrayOfCompliments) {
   return randomCompliment;
 }
 
-renderCompliment();
+// renderCompliment();
 
 setInterval(showTime, 1000);
 function showTime() {

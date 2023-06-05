@@ -23,7 +23,7 @@ function renderQuestionForm() {
       <fieldset>
         <p id="quote-answer">Quote: </p>
       </fieldset>
-      <button>Ask Question</button>
+      <button class="btn btn-success">Ask Question</button>
     </form>
   </section>
   `;
@@ -63,7 +63,7 @@ function findQuote(event) {
           <option value="Bree">Bree</option>
         </select>
       </fieldset>
-      <button>Submit Guess</button>
+      <button class="btn btn-success">Submit Guess</button>
     </form>
     <p id="guess-result"></p>
     `
