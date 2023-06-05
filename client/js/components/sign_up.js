@@ -1,4 +1,3 @@
-
 // line 2 through 31 are the sign up form, might want to add password confirmation later. signUp
 function renderSignUp() {
     document.querySelector("#page").innerHTML = `
@@ -29,7 +28,7 @@ function renderSignUp() {
         </form>
    </section>
    `;
-}
+};
 
 function signUp(event) {
     event.preventDefault();
@@ -45,4 +44,4 @@ function signUp(event) {
     })
         .then((res) => res.json())
         .then(() => renderLogin());
-}
+};

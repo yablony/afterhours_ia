@@ -20,14 +20,14 @@ function renderAddQuoteForm() {
       </form>
     </section>
   `
-}
+};
 
 function addQuote(event) {
   event.preventDefault()
-  const form = event.target
+  const form = event.target;
 
   // converts form data into an object
-  const data = Object.fromEntries(new FormData(form))
+  const data = Object.fromEntries(new FormData(form));
 
   fetch('/api/quotes', {
     method: 'POST',
@@ -36,7 +36,7 @@ function addQuote(event) {
   })
     .then(res => res.json())
     .then(quote => {
-        state.quotes.push(quote)
-        renderQuoteList()
+      state.quotes.push(quote)
+      renderQuoteList()
     })
-}
+};

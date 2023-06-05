@@ -16,15 +16,16 @@ function renderLogin() {
         </form>
     </section>
     `
-}
+};
 
 function logIn(event) {
     event.preventDefault()
-    const form = event.target
+    const form = event.target;
 
     // to convert the form ata into an object
-    const data = Object.fromEntries(new FormData(form))
-    const welcomeDOM = document.querySelector('#welcome')
+    const data = Object.fromEntries(new FormData(form));
+    const welcomeDOM = document.querySelector('#welcome');
+
     fetch('/api/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -44,11 +45,11 @@ function logIn(event) {
                 renderNavBar()
             }
         })
-}
+};
 
 function renderError(errorMessage) {
     document.querySelector('#page').innerHTML =
         `<h2 class="error">${errorMessage}</h2>` +
         document.querySelector('#page').innerHTML
-}
+};
 

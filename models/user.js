@@ -1,7 +1,6 @@
 const db = require('../db/db')
 
 const User = {
-
     // Setting up the findByEmail function
     findByEmail: email => {
         const sql = `
@@ -37,8 +36,6 @@ const User = {
             .query(sql, [username, first_name, last_name, email, passwordDigest])
             .then(dbRes => dbRes.rows[0].email)
     }
-
-
 }
 
-module.exports = User
+module.exports = User;
