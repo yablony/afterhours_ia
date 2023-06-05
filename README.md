@@ -15,7 +15,13 @@ Our first group project! Julia, Dale, Ben built a helper tool for students - get
 <img src="./resources/" alt="image of the app preview" width="auto" height="800px">
 
 ## :pencil2: Planning & Problem Solving
-- 
+The work on this project commenced with a detailed plan on how we want our app to look, what functionality it will have and what tools we need to set up to get started with it.
+
+First, the functionality of the app was written in the form of user stories that were later used in the Trello app to assign responsibilites and tasks amongs the members of the group. 
+![image of the user stories for the app](./resources/user_stories.png)
+
+
+
 - Gaining experience working as a group, learning how to work together efficiently and not overlap.
 - 
 
@@ -47,4 +53,4 @@ Our first group project! Julia, Dale, Ben built a helper tool for students - get
 ## :white_check_mark: Future features
 - A general user can favourite a quote from an IA to view a list of quotes that they liked.
 - A general user can report a quote that they find offensive.
-- A general user can ask a question to anyone and then 
+- A general user can ask a question to anyone and then they can guess which IA said the random quote that pops up as an answer to their question.
