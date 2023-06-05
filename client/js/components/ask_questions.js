@@ -85,7 +85,6 @@ function findQuote(event) {
 
     quoteDOM.textContent = `Quote: ${quotesOfAnIa[randomQuoteIndex]}`;
     if (iaSelector.value === 'Kasun') {
-      console.log('meow')
       document.body.classList.add('kasun');
     }
   }

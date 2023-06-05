@@ -49,7 +49,6 @@ router.put('/', (req, res) => {
     const name = req.body.name;
     const quote = req.body.quote;
     const id = req.body.id;
-    // debug: console.log("REQ.BODY: ", req.body) 
 
     User
         .findByEmail(userEmail)
