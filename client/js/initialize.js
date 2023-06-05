@@ -1,6 +1,7 @@
 const state = {
   quotes: [],
-  loggedInUser: null
+  loggedInUser: null,
+  loggedInUserId: null
 };
 // in order to log out also need to destory cookie/loggedInUser
 fetch('/api/sessions')
