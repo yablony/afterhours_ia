@@ -1,3 +1,4 @@
+
 function renderLogin() {
     document.querySelector('#page').innerHTML = `
     <section class='log-in'>
@@ -40,6 +41,7 @@ function logIn(event) {
                 state.loggedInUserId = res.userId
                 welcomeDOM.textContent = `Welcome ${state.loggedInUser}`
                 renderQuestionForm()
+                renderNavBar()
             }
         })
 }

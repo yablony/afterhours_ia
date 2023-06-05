@@ -25,9 +25,9 @@ const compliments = [
   // need to include the nav bar in the else statement as we only want users who aren't logged in.
 function renderCompliment() {
 // null is falsey by default, therefor the if {} else will run automatically
-  if (state.loggedInUser) {
-    console.log('kicked out')
-  }
+  // if (state.loggedInUser) {
+  //   console.log('kicked out')
+  // }
   document.querySelector('#page').innerHTML = `
     <div id="complimentContainer">
       <p id="compliment" style="color: black"></p>

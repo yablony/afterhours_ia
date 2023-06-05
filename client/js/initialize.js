@@ -1,13 +1,7 @@
 const state = {
-  quotes: []
+  quotes: [],
+  loggedInUser: null
 }
-
-fetch('/api/quotes')
-  .then(res => res.json())
-  .then(quotes => {
-    state.quotes = quotes
-    renderQuestionForm()
-  })
 // in order to log out also need to destory cookie/loggedInUser
 fetch('/api/sessions')
   .then(res => res.json())
@@ -18,7 +12,15 @@ fetch('/api/sessions')
       let welcomeDOM = document.querySelector('#welcome')
       welcomeDOM.textContent = `Welcome ${state.loggedInUser}`
     }
-  })
+})
+
+fetch('/api/quotes')
+  .then(res => res.json())
+  .then(quotes => {
+    state.quotes = quotes
+    renderQuestionForm()
+    renderNavBar()
+})
 
 function renderLogout(event) {
   event.preventDefault()
@@ -32,8 +34,25 @@ function renderLogout(event) {
         welcomeDOM.textContent = 'Welcome'
         state.loggedInUser = null
         renderCompliment()
+        renderNavBar()
       }
     })
 }
 
+function renderNavBar() {
+  if (state.loggedInUser === null) {
+    document.querySelector('#navbar').innerHTML = `
+      <li onClick="renderSignUp()">Sign Up</li>
+      <li onClick="renderLogin()">Log In</li>
+      <li onClick="renderCompliment()">Emergency Compliment</li>
+    `
+  } else {
+    document.querySelector('#navbar').innerHTML = `
+      <li onClick="renderQuestionForm()">Ask IA</li>
+      <li onClick="renderQuoteList()">My Quotes</li>
+      <li onClick="renderCompliment()">Emergency Compliment</li>
+      <li onClick="renderLogout(event)">Log Out</li>
+    `
+  }
+}
 
