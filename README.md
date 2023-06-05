@@ -20,12 +20,16 @@ The work on this project commenced with a detailed plan on how we want our app t
 First, the functionality of the app was written in the form of user stories that were later used in the Trello app to assign responsibilites and tasks amongs the members of the group. 
 ![image of the user stories for the app](./resources/user_stories.png)
 
+Then the wireframes for the app were put together:
+![image of the wireframes for the app](./resources/wire-frame.png)
+![image of the wireframes for the app](./resources/Project_3,_Entry,_SignUp,_Login.png)
 
+The app needed to have a database set up that consists of two tables of user and quote data with an extra table for the favourite quotes as a future feature:
+![image of the database relationships for the app](./resources/1-many.png)
 
-- Gaining experience working as a group, learning how to work together efficiently and not overlap.
-- 
+The GitHub repositary was set up to allow us to code and work as a group on the app. Version control and repo branches became our best friends in this journey. One member was nominated as a Git Leader who managed the merging of work on Git and everyone else was collaborating by using pull requests. We learnt how to work together efficiently and not overlap our code.
 
-![IA](resources/wireframe.png)
+Finally, the app was deployed on Render and any deployment related errors were fixed. 
 
 ## :rocket: Cool tech
 - Coding languages: HTML, CSS, JavaScript.
