@@ -1,10 +1,10 @@
 function renderUpdateQuote(event) {
-  const updateBtn = event.target
-  const quoteDOM = updateBtn.closest('.quote')
-  const quoteId = quoteDOM.dataset.id
-  const quoteArray = state.quotes.filter(quote => quote.id == quoteId)
-  const quoteText = quoteArray[0].quote
-  const name = quoteArray[0].name
+  const updateBtn = event.target;
+  const quoteDOM = updateBtn.closest('.quote');
+  const quoteId = quoteDOM.dataset.id;
+  const quoteArray = state.quotes.filter(quote => quote.id == quoteId);
+  const quoteText = quoteArray[0].quote;
+  const name = quoteArray[0].name;
 
   document.querySelector('#page').innerHTML = `
     <section class="update-quote" data-id="${quoteId}">
@@ -20,17 +20,15 @@ function renderUpdateQuote(event) {
       </form>
     </section>
   `
-}
+};
 
-// need to change method to PUT
-// provide name
 function updateQuote(event) {
   event.preventDefault()
-  const form = event.target
+  const form = event.target;
 
   // converts form data into an object
-  const data = Object.fromEntries(new FormData(form))
-  console.log("DATA:", data)
+  const data = Object.fromEntries(new FormData(form));
+  // debug: console.log("DATA:", data)
 
   fetch('/api/quotes', {
     method: 'PUT',
@@ -39,9 +37,9 @@ function updateQuote(event) {
   })
     .then(res => res.json())
     .then(quote => {
-      console.log("UPDATED QUOTE", quote)
+      // debug: console.log("UPDATED QUOTE", quote)
       state.quotes = state.quotes.filter(q => q.id != quote.id)
       state.quotes.push(quote)
       renderQuoteList()
     })
-}
+};

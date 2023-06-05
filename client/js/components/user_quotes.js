@@ -6,13 +6,10 @@ function renderQuoteList() {
     ${renderMyQuotes()}
   </section>
   `
-}
+};
 
-// the maybe function works, just need a nav button that runs it. Haven't tested fully
 function renderMyQuotes() {
-  // need a function to filter through the id's of the users
-  // we need to find the id using email
-  const userQuotes = state.quotes.filter(quote => quote.user_id == state.loggedInUserId)
+  const userQuotes = state.quotes.filter(quote => quote.user_id == state.loggedInUserId);
   return userQuotes.map(quote => `
    <section class="quote" data-id='${quote.id}'>
      <header>
@@ -23,12 +20,12 @@ function renderMyQuotes() {
       <p>${quote.quote}</p>
     </section>
     `).join('')
-}
+};
 
 function deleteQuote(event) {
-  const deleteBtn = event.target
-  const quoteDOM = deleteBtn.closest('.quote')
-  const quoteId = quoteDOM.dataset.id
+  const deleteBtn = event.target;
+  const quoteDOM = deleteBtn.closest('.quote');
+  const quoteId = quoteDOM.dataset.id;
   fetch(`/api/quotes/${quoteId}`, {
     method: 'DELETE'
   })
@@ -36,4 +33,4 @@ function deleteQuote(event) {
       state.quotes = state.quotes.filter(q => q.id != quoteId)
       renderQuoteList()
     })
-}
+};

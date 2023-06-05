@@ -20,21 +20,16 @@ const compliments = [
   "Coffee and code: the perfect blend for productivity (and jitters).",
   "I'm not addicted to coffee, I'm just in a committed relationship.",
   "Debugging without caffeine is like trying to find a needle in a haystack with oven mitts on.",
-  
-  ];
-  // need to include the nav bar in the else statement as we only want users who aren't logged in.
+];
+
 function renderCompliment() {
-// null is falsey by default, therefor the if {} else will run automatically
-  // if (state.loggedInUser) {
-  //   console.log('kicked out')
-  // }
   document.querySelector('#page').innerHTML = `
     <div id="complimentContainer">
       <p id="compliment" style="color: black"></p>
       <button id="newComplimentButton" onClick="generateRandomCompliment(compliments)">New Compliment</button>
     </div>
   `
-}
+};
 
 // Function to generate a random Compliment
 function generateRandomCompliment(arrayOfCompliments) {
@@ -42,36 +37,37 @@ function generateRandomCompliment(arrayOfCompliments) {
   const randomCompliment = arrayOfCompliments[randomIndex];
   let complimentText = document.getElementById('compliment');
   complimentText.textContent = randomCompliment;
-
   return randomCompliment;
-}
-renderCompliment()
+};
+
+renderCompliment();
 
 setInterval(showTime, 1000);
 function showTime() {
-    let time = new Date();
-    let hour = time.getHours();
-    let min = time.getMinutes();
-    let sec = time.getSeconds();
+  let time = new Date();
+  let hour = time.getHours();
+  let min = time.getMinutes();
+  let sec = time.getSeconds();
+  am_pm = "AM";
+
+  if (hour > 12) {
+    hour -= 12;
+    am_pm = "PM";
+  }
+  if (hour == 0) {
+    hr = 12;
     am_pm = "AM";
- 
-    if (hour > 12) {
-        hour -= 12;
-        am_pm = "PM";
-    }
-    if (hour == 0) {
-        hr = 12;
-        am_pm = "AM";
-    }
- 
-    hour = hour < 10 ? "0" + hour : hour;
-    min = min < 10 ? "0" + min : min;
-    sec = sec < 10 ? "0" + sec : sec;
- 
-    let currentTime = hour + ":"
-            + min + ":" + sec + am_pm;
- 
-    document.getElementById("clock")
-            .innerHTML = currentTime;
-}
+  }
+
+  hour = hour < 10 ? "0" + hour : hour;
+  min = min < 10 ? "0" + min : min;
+  sec = sec < 10 ? "0" + sec : sec;
+
+  let currentTime = hour + ":"
+    + min + ":" + sec + am_pm;
+
+  document.getElementById("clock")
+    .innerHTML = currentTime;
+};
+
 showTime();

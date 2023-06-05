@@ -1,6 +1,6 @@
 const pg = require("pg");
 
-const localDbName = 'afterhours_ia'
+const localDbName = 'afterhours_ia';
 
 let db;
 if (process.env.DATABASE_URL) {
@@ -21,6 +21,6 @@ if (process.env.DATABASE_URL) {
       database: localDbName
     })
   }
-}
+};
 
 module.exports = db;
