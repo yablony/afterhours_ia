@@ -22,7 +22,6 @@ fetch('/api/quotes')
     state.quotes = quotes
     renderCompliment()
     renderNavBar()
-    console.log("nav bar - initialise.js - line 25")
 });
 
 function renderLogout(event) {

@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  margin: 0 2rem;
+  margin: 0;
   background-color: #cad2c5;
   background-image: url("../../resources/user_stories.png");
   background-repeat: repeat;
