@@ -138,3 +138,8 @@ h1 {
 .sign-up form button:hover {
   background-color: #52796f;
 }
+
+ /* {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+} */

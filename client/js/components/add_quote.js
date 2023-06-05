@@ -1,6 +1,6 @@
 // renders a form with a dropdown box to select an IA and an input field so users can provide a quote
 function renderAddQuoteForm() {
-  document.querySelector('#page').innerHTML = `
+  document.querySelector('#id').innerHTML = `
     <section class="add-quote">
       <form action="" onSubmit="addQuote(event)" class="new-quote-form">
         <input type="hidden" name="email" value=${state.loggedInUser}>
