@@ -88,9 +88,12 @@ function findQuote(event) {
     const quoteDOM = document.querySelector('#quote-answer');
 
     quoteDOM.textContent = `Quote: ${quotesOfAnIa[randomQuoteIndex]}`;
-    if (iaSelector.value === 'Kasun') {
-      document.body.classList.add('kasun');
-    }
+  }
+  
+  if (iaSelector.value === 'Kasun') {
+    document.body.classList.add('kasun'); // Add 'kasun' class to body
+  } else {
+    document.body.classList.remove('kasun'); // Remove 'kasun' class from body
   }
 
   // removes the guessing form if the name of the IA is selected instead of 'Anyone'
@@ -98,4 +101,3 @@ function findQuote(event) {
     guessFormSection.innerHTML = '';
   });
 }
-
