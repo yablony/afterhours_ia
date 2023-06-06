@@ -25,6 +25,7 @@ function renderQuestionForm() {
       </fieldset>
       <button class="btn btn-success">Ask Question</button>
     </form>
+    <div class="kasunSurprise"></div>
   </section>
   `;
 }
@@ -50,6 +51,7 @@ function findQuote(event) {
   const iaSelector = document.querySelector('#ia');
   const askIADOM = document.querySelector('.ask-question');
   const guessFormSection = document.createElement('section');
+  guessFormSection.classList.add('guess-ia-section');
 
   // gets rid of the guess result text when the user clicks the 'Ask Question' button while the select is set to 'Anyone'
   if (document.querySelector("#guess-result")) {
@@ -69,9 +71,10 @@ function findQuote(event) {
             <option value="Bree">Bree</option>
           </select>
         </fieldset>
+        <p id="guess-result"></p>
         <button class="btn btn-success">Submit Guess</button>
       </form>
-      <p id="guess-result"></p>
+     
       `
       askIADOM.appendChild(guessFormSection);
     }
@@ -91,9 +94,9 @@ function findQuote(event) {
   }
   
   if (iaSelector.value === 'Kasun') {
-    document.body.classList.add('kasun'); // Add 'kasun' class to body
+    document.querySelector('.kasunSurprise').classList.add('kasun'); // Add 'kasun' class to body
   } else {
-    document.body.classList.remove('kasun'); // Remove 'kasun' class from body
+    document.querySelector('.kasunSurprise').classList.remove('kasun'); // Remove 'kasun' class from body
   }
 
   // removes the guessing form if the name of the IA is selected instead of 'Anyone'
