@@ -37,7 +37,6 @@ function renderLogout(event) {
         state.loggedInUser = null
         renderCompliment()
         renderNavBar()
-        console.log("nav bar - initialise.js - line 41")
       }
     })
 }
