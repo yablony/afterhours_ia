@@ -12,7 +12,7 @@ Our first group project! Julia, Dale, Ben built a helper tool for students - get
 4. You can visit 'My Quotes' page to add a new quote, edit or delete the quotes that you've created.
 5. You can also generate a random compliment in case you are feeling down.
 
-<img src="./resources/" alt="image of the app preview" width="auto" height="800px">
+<img src="./resources/app_screenshot.png" alt="image of the app preview" width="auto" height="800px">
 
 ## :pencil2: Planning & Problem Solving
 The work on this project commenced with a detailed plan on how we want our app to look, what functionality it will have and what tools we need to set up to get started with it.
