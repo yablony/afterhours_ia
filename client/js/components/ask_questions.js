@@ -48,11 +48,15 @@ function findIA(event) {
 function findQuote(event) {
   event.preventDefault();
   const iaSelector = document.querySelector('#ia');
+  const askIADOM = document.querySelector('.ask-question');
+  const guessFormSection = document.createElement('section');
+
+  // gets rid of the guess result text when the user clicks the 'Ask Question' button while the select is set to 'Anyone'
+  if (document.querySelector("#guess-result")) {
+    document.querySelector("#guess-result").textContent = '';
+  }
 
   if (iaSelector.value === 'Anyone') {
-    const askIADOM = document.querySelector('.ask-question');
-    const guessFormSection = document.createElement('section');
-
     if (!document.querySelector('#guess-ia')) {
       guessFormSection.innerHTML = `
       <form id="guess-ia" action="" onSubmit="findIA(event)">
@@ -88,4 +92,10 @@ function findQuote(event) {
       document.body.classList.add('kasun');
     }
   }
+
+  iaSelector.addEventListener('change', () => {
+    console.log('meow')
+    guessFormSection.innerHTML = '';
+  });
 }
+
