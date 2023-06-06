@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .content {
@@ -31,7 +31,7 @@ main {
 #clock {
   position: fixed;
   top: 5px;
-  left: 0;
+  left: 5px;
   background-color: #84a98c;
   color: #fff;
   padding: 10px;
@@ -43,7 +43,10 @@ h1 {
 }
 
 .kasun {
-  background-image: url(./resources/NewProject.png);
+  background-image: url(../images/NewProject.png);
+  background-size: cover;
+  animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 2s; /* don't forget to set a duration! */
 }
 
 fieldset {
