@@ -5,32 +5,35 @@
 
 .header-nav ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   list-style: none;
   padding: 0;
 }
 
 .header-nav li {
-  padding: 0 0.5rem;
+  padding: 0.5rem ;
 }
 
 #navbar {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
   list-style: none;
-  width: 300px;
+  width: 500px;
   margin-left: auto;
-  padding: 10px;
-  margin-bottom: 20px;
+  /* padding: 10px; */
+  margin-bottom: 0px;
   cursor: pointer;
   border: 1px solid #2f3e46;
   border-radius: 15px;
+  /* padding-top: ; */
+  /* padding-bottom: 0.5rem; */
+  
 }
 
-#navbar li {
-  margin-bottom: 10px;
-}
+/* #navbar li {
+  margin-bottom: 0px;
+} */
 
 #navbar li a {
   color: #fff;
