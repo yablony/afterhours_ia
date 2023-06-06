@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 body {
@@ -13,6 +13,13 @@ body {
   align-items: center;
   justify-content: flex-start;
   min-height: 100vh;
+}
+
+.content {
+  max-width: 85%;
+}
+main {
+  padding-top: 1rem;
 }
 
 #welcome {
