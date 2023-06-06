@@ -16,7 +16,7 @@ function renderQuestionForm() {
           <option value="Bree">Bree</option>
         </select>
       </fieldset>
-      <fieldset>
+      <fieldset class="question">
         <label for="">Your Question: </label>
         <textarea name="question" id="" rows="1"></textarea>
     </fieldset>
@@ -93,8 +93,8 @@ function findQuote(event) {
     }
   }
 
+  // removes the guessing form if the name of the IA is selected instead of 'Anyone'
   iaSelector.addEventListener('change', () => {
-    console.log('meow')
     guessFormSection.innerHTML = '';
   });
 }
