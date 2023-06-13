@@ -38,7 +38,6 @@ Finally, the app was deployed on Render and any deployment related errors were f
 - Code editor: Visual Studio Code.
 - Deployment: Render.
 - Libraries: Animate.css, Bootstrap(to style the buttons).
-- Animation: 
 - All the passwords are securely stored through bcrypt hashing and salthing.
 
 ## :scream: Bugs to fix :poop:
